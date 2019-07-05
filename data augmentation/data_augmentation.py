@@ -21,11 +21,11 @@ for f in files:
     img= Image.open(new)
     img_array = np.array(img)
     #data augmentation
-    if top>2:
+    if top>num:
         newimg=ImageOps.equalize(img)
     else:
         newimg=img
-    if top>4:
+    if top>num:
         newimg=ImageOps.equalize(newimg)
     newname='image_path'+f
     scipy.misc.imsave(newname,newimg)
